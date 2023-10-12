@@ -9,7 +9,8 @@
 		"postbuild": "pagefind --site dist",
 		"preview": "astro preview",
 		"format": "prettier -w --cache .",
-		"check": "astro check"
+		"check": "astro check",
+		"write": "node ./IA.js"
 	},
 	"dependencies": {
 		"@astrojs/mdx": "^0.19.7",
