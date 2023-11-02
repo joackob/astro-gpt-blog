@@ -10,7 +10,7 @@
 		"preview": "astro preview",
 		"format": "prettier -w --cache .",
 		"check": "astro check",
-		"write": "node ./IA.js"
+		"write": "python3 ./ia/main.py"
 	},
 	"dependencies": {
 		"@astrojs/mdx": "^0.19.7",
