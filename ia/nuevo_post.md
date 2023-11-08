@@ -1,12 +1,20 @@
-[1]: https://bing.com/search?q=peliculas+de+terror ""
-[2]: https://www.youtube.com/watch?v=xYBKE9Gyjqc ""
-[3]: https://www.youtube.com/watch?v=3oDs3H83x_Y ""
-[4]: https://www.youtube.com/watch?v=GwZ8onTu-c0 ""
-[5]: https://www.youtube.com/playlist?list=PLqxJrQpJhzY27W3AaU_wVwS1g5fmbp6Hh ""
-[6]: https://www.netflix.com/es/browse/genre/8711 ""
-[7]: https://www.espinof.com/listas/mejores-peliculas-terror-todos-tiempos ""
-[8]: https://www.culturagenial.com/es/peliculas-de-terror-recientes/ ""
-[9]: https://youtube.com/playlist?list=PLTu73AU63hNlqtXyj4uY2d6pGnIJBg8NP ""
+---
+title: "A working draft title"
+description: "This post is for testing the draft post functionality"
+publishDate: "10 Sept 2023"
+tags: ["test"]
+draft: true
+---
+
+[1]: https://bing.com/search?q=peliculas+de+terror
+[2]: https://www.youtube.com/watch?v=xYBKE9Gyjqc
+[3]: https://www.youtube.com/watch?v=3oDs3H83x_Y
+[4]: https://www.youtube.com/watch?v=GwZ8onTu-c0
+[5]: https://www.youtube.com/playlist?list=PLqxJrQpJhzY27W3AaU_wVwS1g5fmbp6Hh
+[6]: https://www.netflix.com/es/browse/genre/8711
+[7]: https://www.espinof.com/listas/mejores-peliculas-terror-todos-tiempos
+[8]: https://www.culturagenial.com/es/peliculas-de-terror-recientes/
+[9]: https://youtube.com/playlist?list=PLTu73AU63hNlqtXyj4uY2d6pGnIJBg8NP
 
 Aquí tienes 10 ejemplos de películas de terror que puedes ver si te gustan los sustos y las emociones fuertes:
 

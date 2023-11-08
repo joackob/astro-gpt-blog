@@ -34,6 +34,10 @@ export default defineConfig({
 			exclude: ["@resvg/resvg-js"],
 		},
 	},
+	experimental: {
+		assets: true,
+		viewTransitions: true,
+	},
 });
 
 function rawFonts(ext: Array<string>) {
