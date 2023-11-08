@@ -1,8 +1,38 @@
 # github.com/xtekky/gpt4free
 import g4f
+import datetime
+
+preposiciones = [
+    "a",
+    "ante",
+    "bajo",
+    "con",
+    "contra",
+    "de",
+    "desde",
+    "durante",
+    "en",
+    "entre",
+    "hacia",
+    "hasta",
+    "mediante",
+    "para",
+    "por",
+    "según",
+    "sin",
+    "so",
+    "sobre",
+    "tras",
+    "versus",
+    "vía",
+]
 
 
-def write(title: str):
+def is_tag(tag: str):
+    return not tag.isnumeric() and tag not in preposiciones
+
+
+def write(title: str, description: str):
     article = g4f.ChatCompletion.create(
         model=g4f.models.gpt_4,
         messages=[
@@ -13,33 +43,44 @@ def write(title: str):
         ],
     )
 
+    publishDate = datetime.datetime.now().strftime("%Y-%m-%d")
+
+    tags = title.lower().split(" ")
+    tags = [tag for tag in tags if is_tag(tag)]
+
     header = {
-        "title": "a title",
-        "description": "a description",
-        "publishDate": "a date",
-        "tags": ["test"],
-        "draft": True,
+        "title": title,
+        "description": description,
+        "publishDate": publishDate,
+        "tags": tags,
+        "draft": False,
     }
 
-    with open("./nuevo_post.md", "+w") as nuevo_post:
-        nuevo_post.write("---\n")
-        nuevo_post.write("title: " + header["title"] + "\n")
-        nuevo_post.write("description: " + header["description"] + "\n")
-        nuevo_post.write("publishDate: " + header["publishDate"] + "\n")
-        nuevo_post.write("tags: " + str(header["tags"]) + "\n")
-        nuevo_post.write("draft: " + str(header["draft"]) + "\n")
-        nuevo_post.write("---\n")
-        nuevo_post.write(article)
+    file_name = title.lower().replace(" ", "-") + ".md"
+    with open(file_name, "+w") as new_post:
+        new_post.write("---\n")
+        new_post.write("title: " + header["title"] + "\n")
+        new_post.write("description: " + header["description"] + "\n")
+        new_post.write("publishDate: " + header["publishDate"] + "\n")
+        new_post.write("tags: " + str(header["tags"]) + "\n")
+        new_post.write("draft: " + str(header["draft"]) + "\n")
+        new_post.write("---\n")
+        new_post.write(article)
 
 
 def main():
     g4f.debug.logging = True  # enable logging
     g4f.check_version = False  # Disable automatic version checking
 
-    titles = ["10 peliculas de terror de todos los tiempos"]
+    seeds = [
+        {
+            "title": "10 peliculas de terror de todos los tiempos",
+            "description": "Las mejores peliculas de terror de todos los tiempos",
+        },
+    ]
 
-    for title in titles:
-        write(title)
+    for seed in seeds:
+        write(title=seed["title"], description=seed["description"])
 
 
 if __name__ == "__main__":
