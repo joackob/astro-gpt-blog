@@ -5,4 +5,4 @@ const exec = (cmd) => {
 };
 
 exec("echo 'installing ia deps...'");
-exec("cd ia && pip install -r requirements.txt");
+exec("cd ia && pipenv install");
