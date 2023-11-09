@@ -59,7 +59,7 @@ def write(title: str, description: str):
     file_name = title.lower().replace(" ", "-") + ".md"
     with open(file_name, "+w") as new_post:
         new_post.write("---\n")
-        new_post.write("title: " + header["title"] + "\n")
+        new_post.write("title: " + f"{header["title"]}" + "\n")
         new_post.write("description: " + header["description"] + "\n")
         new_post.write("publishDate: " + header["publishDate"] + "\n")
         new_post.write("tags: " + str(header["tags"]) + "\n")
@@ -74,8 +74,8 @@ def main():
 
     seeds = [
         {
-            "title": "10 peliculas de terror de todos los tiempos",
-            "description": "Las mejores peliculas de terror de todos los tiempos",
+            "title": "Resumen de la serie megalodon",
+            "description": "el mejor resumen de la serie megalodon",
         },
     ]
 
@@ -84,4 +84,5 @@ def main():
 
 
 if __name__ == "__main__":
+    print("escribiendo")
     main()

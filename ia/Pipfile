@@ -6,6 +6,9 @@ name = "pypi"
 [packages]
 g4f = "*"
 
+[scripts]
+start = "python ./main.py"
+
 [dev-packages]
 
 [requires]
