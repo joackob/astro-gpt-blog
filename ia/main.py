@@ -1,6 +1,7 @@
 # github.com/xtekky/gpt4free
 import g4f
 import datetime
+import sys
 
 preposiciones = [
     "a",
@@ -27,9 +28,13 @@ preposiciones = [
     "vía",
 ]
 
+articulos = ["el", "la", "los", "las", "un", "una", "unos", "unas"]
+
+conectores = ["y", "además", "también", "asimismo", "por otro lado", "por otro lado"]
+
 
 def is_tag(tag: str):
-    return not tag.isnumeric() and tag not in preposiciones
+    return not tag.isnumeric() and tag not in preposiciones and tag not in articulos
 
 
 def write(title: str, description: str):
@@ -57,107 +62,28 @@ def write(title: str, description: str):
     }
 
     file_name = title.lower().replace(" ", "-") + ".md"
-    with open(file_name, "+w") as new_post:
+    with open(file=file_name, mode="+w", encoding="utf-8") as new_post:
         new_post.write("---\n")
-        new_post.write("title: " + f"{header["title"]}" + "\n")
-        new_post.write("description: " + header["description"] + "\n")
+        new_post.write("title: " + f'"{header["title"]}"' + "\n")
+        new_post.write("description: " + f'"{header["description"]}"' + "\n")
         new_post.write("publishDate: " + header["publishDate"] + "\n")
         new_post.write("tags: " + str(header["tags"]) + "\n")
         new_post.write("draft: " + str(header["draft"]) + "\n")
         new_post.write("---\n")
-        new_post.write(article)
+        new_post.write(
+            str(article)
+        )  # Access the content property of the article object
 
 
 def main():
     g4f.debug.logging = True  # enable logging
-    g4f.check_version = False  # Disable automatic version checking
 
-    seeds = [
-        {
-            "title": "Resumen de la serie megalodon",
-            "description": "el mejor resumen de la serie megalodon",
-        },
+    title = sys.argv[1]
+    description = sys.argv[2]
 
-        {
-           "title": "Los avances más recientes en inteligencia artificial y su impacto en la sociedad",
-            "description": "avances en IA y su impacto", 
-        },
-
-        {
-            "title": "Cómo cultivar un jardín de hierbas en espacios pequeños",
-            "description": "cultivar jardín de hierbas en espacios reducidos",
-        },
-
-        {
-            "title": "Entrevista exclusiva con un astronauta: La vida en el espacio",
-            "description": "el mejor resumen de la serie megalodon",
-        },
-
-        {
-            "title": "Reseña crítica de la última película de ciencia ficción",
-            "description": "el mejor resumen de la serie megalodon",
-        },
-
-        {
-            "title": "Guía paso a paso para mejorar la productividad en el trabajo",
-            "description": "el mejor resumen de la serie megalodon",
-        },
-
-        {
-            "title": "Los beneficios del yoga en la salud mental y física",
-            "description": "el mejor resumen de la serie megalodon",
-        },
-
-        {
-            "title": "Perfil de éxito: La historia detrás del emprendimiento de una startup",
-            "description": "el mejor resumen de la serie megalodon",
-        },
-
-        {
-            "title": "10 consejos esenciales para viajar de manera económica",
-            "description": "el mejor resumen de la serie megalodon",
-        },
-
-        {
-            "title": "Análisis de las tendencias de moda para la temporada otoño-invierno",
-            "description": "el mejor resumen de la serie megalodon",
-        },
-
-        {
-            "title": "Cómo elegir la mejor cámara fotográfica para principiantes",
-            "description": "el mejor resumen de la serie megalodon",
-        },
-
-        {
-            "title": "Investigación académica: Impacto del cambio climático en los ecosistemas marinos",
-            "description": "el mejor resumen de la serie megalodon",
-        },
-
-        {
-            "title": "Crónica de un evento cultural: Festival de Arte y Música 2023",
-            "description": "el mejor resumen de la serie megalodon",
-        },
-
-        {
-            "title": "Crónica de un evento cultural: Festival de Arte y Música 2023",
-            "description": "el mejor resumen de la serie megalodon",
-        },
-
-        {
-            "title": "Humor satírico: Las situaciones más absurdas en la vida cotidiana",
-            "description": "el mejor resumen de la serie megalodon",
-        },
-
-        {
-            "title": "Los secretos detrás de una dieta balanceada y sus efectos en la salud",
-            "description": "el mejor resumen de la serie megalodon",
-        },
-    ]
-
-    for seed in seeds:
-        write(title=seed["title"], description=seed["description"])
+    print(f"escribiendo un articulo sobre: {title}")
+    write(title=title, description=description)
 
 
 if __name__ == "__main__":
-    print("escribiendo")
     main()
