@@ -1,27 +1,6 @@
-<div align="center">
-  <img alt="Astro Theme Cactus logo" src="https://github.com/chrismwilliams/astro-theme-cactus/assets/12715988/85aa0d3c-ef6a-44e2-954d-ef035b4f4315" width="70" />
-</div>
-<h1 align="center">
-  Astro Theme Cactus
-</h1>
+# Astro GPT Blog
 
-Astro Theme Cactus is a simple opinionated starter built with the Astro framework. Use it to create an easy-to-use blog or website.
-
-## Table Of Contents
-
-1. [Key Features](#key-features)
-2. [Demo](#demo-💻)
-3. [Quick start](#quick-start)
-4. [Preview](#preview)
-5. [Commands](#commands)
-6. [Configure](#configure)
-7. [Adding Posts](#adding-posts)
-   - [Frontmatter](#frontmatter)
-8. [Pagefind search](#pagefind-search)
-9. [Analytics](#analytics)
-10. [View Transitions](#view-transitions)
-11. [Deploy](#deploy)
-12. [Acknowledgment](#acknowledgment)
+Astro GPT Blog is a highly customizable blog, whose posts are generated "automatically" based on the "tips" proposed by its "author".
 
 ## Key Features
 
@@ -39,35 +18,29 @@ Astro Theme Cactus is a simple opinionated starter built with the Astro framewor
 - Auto-generated [sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)
 - [Pagefind](https://pagefind.app/) static search library integration
 - [Astro Icon](https://github.com/natemoo-re/astro-icon) svg icon component
-
-## Demo 💻
-
-Check out the [Demo](https://astro-theme-cactus.netlify.app/), hosted on Netlify
+- [G4F](https://github.com/xtekky/gpt4free) for the generation of automatic posts
 
 ## Quick start
 
-[Create a new repo](https://github.com/chrismwilliams/astro-theme-cactus/generate) from this template.
-
-[![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/chrismwilliams/astro-theme-cactus) [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fchrismwilliams%2Fastro-theme-cactus&project-name=astro-theme-cactus)
+[Create a new repo](https://github.com/joackob/astro-gpt-blog) from this template.
 
 ## Preview
 
-![Astro Theme Cactus in a light theme mode](https://github.com/chrismwilliams/astro-theme-cactus/assets/12715988/84c89d42-4525-4674-b10c-6d6ebdc06382)
-
-![Astro Theme Cactus in a dark theme mode](https://github.com/chrismwilliams/astro-theme-cactus/assets/12715988/e0e575e2-445f-4c2d-a812-b5b53d2d9031)
+<img src="./readme-assets/demo.png" alt="Astro Theme Cactus in a dark theme mode" style="zoom:50%;" />
 
 ## Commands
 
-Replace pnpm with your choice of npm / yarn
+Replace pnpm with your choice of npm / yarn / npm
 
-| Command          | Action                                                         |
-| :--------------- | :------------------------------------------------------------- |
-| `pnpm install`   | Installs dependencies                                          |
-| `pnpm dev`       | Starts local dev server at `localhost:3000`                    |
-| `pnpm build`     | Build your production site to `./dist/`                        |
-| `pnpm postbuild` | Pagefind script to build the static search of your blog posts  |
-| `pnpm preview`   | Preview your build locally, before deploying                   |
-| `pnpm sync`      | Generate types based on your config in `src/content/config.ts` |
+| Command `pnpm`   | Command `npm`       | Action                                                       |
+| :--------------- | ------------------- | :----------------------------------------------------------- |
+| `pnpm install`   | `npm install`       | Installs dependencies                                        |
+| `pnpm dev`       | `npm run dev`       | Starts local dev server at `localhost:3000`                  |
+| `pnpm build`     | `npm run build`     | Build your production site to `./dist/`                      |
+| `pnpm postbuild` | `npm run postbuild` | Pagefind script to build the static search of your blog posts |
+| `pnpm preview`   | `npm run previes`   | Preview your build locally, before deploying                 |
+| `pnpm sync`      | `npm run sync`      | Generate types based on your config in `src/content/config.ts` |
+|                  | `npm run write`     | Generate posts based on the seeds (titles and descriptions proposed in the file `/utils/write-ia.mjs`) |
 
 ## Configure
 
@@ -79,7 +52,7 @@ Replace pnpm with your choice of npm / yarn
   - manifest.webmanifest
 - Modify file `src/styles/global.css` with your own light and dark styles
 - Edit social links in `src/components/SocialList.astro` to add/replace your media profile. Icons can be found @ [icones.js.org](https://icones.js.org/)
-- Create / edit posts for your blog within `src/content/post/` with .md/mdx file(s). See [below](#adding-posts) for more details.
+- **Important** Create or edit the titles and descriptions that are used as seeds for the posts in the archive `/utils/write-ia.mjs`
 - OG Image:
   - If you would like to change the style of the generated image the Satori library creates, open up `src/pages/og-image/[slug].png.ts` to the markup function where you can edit the html/tailwind-classes as necessary. You can also use this [satori playground](https://og-playground.vercel.app/) to aid your design.
   - If you would like to generate svg og images rather than the default .png ones, you will need to remove the @resvg/resvg-js library, and return the svg within the body of the get function from the file `src/pages/og-image/[slug].png.ts`.
@@ -160,7 +133,7 @@ By default the site will be built (see [Commands](#commands) section above) to a
 
 ## Acknowledgment
 
-This theme was inspired by [Hexo Theme Cactus](https://github.com/probberechts/hexo-theme-cactus)
+This app was inspired by [Hexo Theme Cactus](https://github.com/probberechts/hexo-theme-cactus)
 
 ## License
 
