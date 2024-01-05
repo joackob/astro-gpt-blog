@@ -1,8 +1,4 @@
-import { execSync } from "child_process";
-
-const exec = (cmd) => {
-	execSync(cmd, { stdio: "inherit" });
-};
+import { exec } from "./exec.mjs";
 
 exec("echo 'installing ia deps...'");
 exec("cd ia && pipenv install");

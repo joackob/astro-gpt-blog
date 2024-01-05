@@ -1,4 +1,4 @@
-import { execSync } from "child_process";
+import { exec } from "./exec.mjs";
 import fs from "fs";
 
 const seeds = [
@@ -63,10 +63,6 @@ const seeds = [
 			"Explora hábitos nocturnos que pueden mejorar tu productividad y bienestar durante el día siguiente.",
 	},
 ];
-
-const exec = (cmd) => {
-	execSync(cmd, { stdio: "inherit" });
-};
 
 seeds.forEach((seed) => {
 	try {
