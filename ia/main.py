@@ -81,7 +81,7 @@ def main():
     title = sys.argv[1]
     description = sys.argv[2]
 
-    print(f"escribiendo un articulo sobre: {title}")
+    print(f"Escribiendo un articulo sobre: {title}")
     write(title=title, description=description)
 
 
