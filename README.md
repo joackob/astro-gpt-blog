@@ -32,14 +32,14 @@ Astro GPT Blog is a highly customizable blog, whose posts are generated "automat
 
 Replace pnpm with your choice of npm / yarn / npm
 
-| Command `pnpm`   | Command `npm`       | Action                                                       |
-| :--------------- | ------------------- | :----------------------------------------------------------- |
-| `pnpm install`   | `npm install`       | Installs dependencies                                        |
-| `pnpm dev`       | `npm run dev`       | Starts local dev server at `localhost:3000`                  |
-| `pnpm build`     | `npm run build`     | Build your production site to `./dist/`                      |
-| `pnpm postbuild` | `npm run postbuild` | Pagefind script to build the static search of your blog posts |
-| `pnpm preview`   | `npm run previes`   | Preview your build locally, before deploying                 |
-| `pnpm sync`      | `npm run sync`      | Generate types based on your config in `src/content/config.ts` |
+| Command `pnpm`   | Command `npm`       | Action                                                                                                 |
+| :--------------- | ------------------- | :----------------------------------------------------------------------------------------------------- |
+| `pnpm install`   | `npm install`       | Installs dependencies                                                                                  |
+| `pnpm dev`       | `npm run dev`       | Starts local dev server at `localhost:3000`                                                            |
+| `pnpm build`     | `npm run build`     | Build your production site to `./dist/`                                                                |
+| `pnpm postbuild` | `npm run postbuild` | Pagefind script to build the static search of your blog posts                                          |
+| `pnpm preview`   | `npm run previes`   | Preview your build locally, before deploying                                                           |
+| `pnpm sync`      | `npm run sync`      | Generate types based on your config in `src/content/config.ts`                                         |
 |                  | `npm run write`     | Generate posts based on the seeds (titles and descriptions proposed in the file `/utils/write-ia.mjs`) |
 
 ## Configure
