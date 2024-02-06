@@ -1,6 +1,6 @@
 # Astro GPT Blog
 
-Astro GPT Blog is a highly customizable blog, whose posts are generated "automatically" based on the "tips" proposed by its "author".
+Astro GPT Blog is a highly customizable blog, whose posts are generated "automatically" based on the "tips" proposed by its "author". For more information, visit the following [site](https://medium.com/@joackob/como-crear-un-blog-con-astro-y-gpt4free-que-genere-artículos-sistemáticamente-71569518e9b5).
 
 ## Key Features
 
