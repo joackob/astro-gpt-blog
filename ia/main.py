@@ -3,6 +3,8 @@ import g4f
 import datetime
 import sys
 
+# luces
+
 preposiciones = [
     "a",
     "ante",
